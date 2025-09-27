@@ -28,6 +28,9 @@ FROM '/Users/macbook/Downloads/archive/olist_customers_dataset.csv'
 DELIMITER ',' CSV HEADER;
 ```
 
+<img width="584" height="377" alt="Снимок экрана 2025-09-27 в 20 18 07" src="https://github.com/user-attachments/assets/d2517229-bb17-45a7-a434-a2f4f3ab4316" />
+
+
 ---
 
 ## 4. SQL Queries & Analytics
