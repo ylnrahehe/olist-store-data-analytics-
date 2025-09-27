@@ -54,4 +54,19 @@ Average freight value by seller state
 Top customers by total spending
 
 
-👉 All queries are stored in queries.sql with short comments.
+👉 All queries are stored in **queries.sql** with short comments.
+
+---
+
+## 🔹 5. Python Integration
+
+- A script **main.py** was written in Python to connect to the **olist_db** database.  
+- Library used: **psycopg2-binary**.  
+- The script executes several SQL queries from **queries.sql** and displays the results in the terminal.  
+
+### 📌 How to run the script
+1. Install dependencies:
+   ```bash
+   pip install psycopg2-binary
+
+
