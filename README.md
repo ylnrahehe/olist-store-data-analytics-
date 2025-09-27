@@ -32,6 +32,8 @@ DELIMITER ',' CSV HEADER;
 
 ## 4. SQL Queries & Analytics
 Queries were executed in pgAdmin (Query Tool) (queries.sql)
+
+
 Two types of queries were written:
 - Basic checks:
 SELECT * FROM table LIMIT 10;
@@ -50,4 +52,6 @@ Average delivery time
 Products by category
 Average freight value by seller state
 Top customers by total spending
+
+
 👉 All queries are stored in queries.sql with short comments.
