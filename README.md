@@ -26,3 +26,28 @@ The ER diagram describes the relationships between the tables in the Olist datas
 \COPY olist_customers_dataset(customer_id, customer_unique_id, customer_zip_code_prefix, customer_city, customer_state)
 FROM '/Users/macbook/Downloads/archive/olist_customers_dataset.csv'
 DELIMITER ',' CSV HEADER;
+```
+
+---
+
+## 4. SQL Queries & Analytics
+Queries were executed in pgAdmin (Query Tool) (queries.sql)
+Two types of queries were written:
+- Basic checks:
+SELECT * FROM table LIMIT 10;
+Filtering with WHERE and sorting with ORDER BY
+Aggregations with COUNT, AVG, MIN, MAX
+Example JOIN between tables
+- 10 analytical queries 
+Topics include:
+Orders by status
+Average monthly order value
+Top sellers by sales
+Unique customers by state
+Average review scores by product category
+Late deliveries percentage
+Average delivery time
+Products by category
+Average freight value by seller state
+Top customers by total spending
+👉 All queries are stored in queries.sql with short comments.
