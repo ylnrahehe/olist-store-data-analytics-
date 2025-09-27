@@ -43,6 +43,11 @@ SELECT * FROM table LIMIT 10;
 Filtering with WHERE and sorting with ORDER BY
 Aggregations with COUNT, AVG, MIN, MAX
 Example JOIN between tables
+
+
+<img width="890" height="514" alt="Снимок экрана 2025-09-27 в 20 24 19" src="https://github.com/user-attachments/assets/9d647a59-6cbe-4a5c-8e47-747dd2053c4d" />
+
+
 - 10 analytical queries 
 Topics include:
 Orders by status
@@ -57,6 +62,9 @@ Average freight value by seller state
 Top customers by total spending
 
 
+<img width="600" height="405" alt="Снимок экрана 2025-09-27 в 20 34 50" src="https://github.com/user-attachments/assets/affd1437-a646-4333-9054-6fe1a1074820" />
+
+
 👉 All queries are stored in **queries.sql** with short comments.
 
 ---
@@ -65,7 +73,10 @@ Top customers by total spending
 
 - A script **main.py** was written in Python to connect to the **olist_db** database.  
 - Library used: **psycopg2-binary**.  
-- The script executes several SQL queries from **queries.sql** and displays the results in the terminal.  
+- The script executes several SQL queries from **queries.sql** and displays the results in the terminal.
+
+<img width="755" height="1025" alt="Снимок экрана 2025-09-27 в 21 38 39" src="https://github.com/user-attachments/assets/6d1bd0d7-db36-44fc-89da-3790ec4f6bbc" />
+
 
 ### 📌 How to run the script
 1. Install dependencies:
