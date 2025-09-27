@@ -83,4 +83,6 @@ Top customers by total spending
    ```bash
    pip install psycopg2-binary
 
+2. My **main.py** file is in folder named "python3", so maybe you will need this to run the file
+   - python3 main.py
 
