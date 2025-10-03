@@ -28,7 +28,7 @@ FROM '/Users/macbook/Downloads/archive/olist_customers_dataset.csv'
 DELIMITER ',' CSV HEADER;
 ```
 
-<img width="584" height="377" alt="Снимок экрана 2025-09-27 в 20 18 07" src="https://github.com/user-attachments/assets/d2517229-bb17-45a7-a434-a2f4f3ab4316" />
+
 
 
 ---
@@ -76,6 +76,34 @@ Top customers by total spending
 - The script executes several SQL queries from **queries.sql** and displays the results in the terminal.
 
 <img width="755" height="1025" alt="Снимок экрана 2025-09-27 в 21 38 39" src="https://github.com/user-attachments/assets/6d1bd0d7-db36-44fc-89da-3790ec4f6bbc" />
+
+---
+
+### 6. Visualizations (Matplotlib)  
+Created **6 static charts** for business insights:  
+- Orders by status  
+- Average order value over time  
+- Top sellers by total orders  
+- Customers by state  
+- Product review scores  
+- Average delivery time (days)
+
+<img width="635" height="474" alt="Снимок экрана 2025-10-04 в 02 52 33" src="https://github.com/user-attachments/assets/6950e15e-e375-44d0-ac1a-8068e3cee563" />
+
+<img width="584" height="454" alt="Снимок экрана 2025-10-04 в 02 53 19" src="https://github.com/user-attachments/assets/d17e936f-6c76-47d6-b6d4-6aff75933e0f" />
+
+---
+
+### 7. Interactive Visualization (Plotly)  
+- Built an **interactive scatter chart** with a **time slider** (`animation_frame` in Plotly).  
+- Shows how customer orders evolve over time across different states.
+
+---
+
+### 8. Export to Excel with Formatting  
+- Added function `export_to_excel()` with **openpyxl**.  
+- Exports query results into `/exports/olist_report.xlsx`.
+
 
 
 ### 📌 How to run the script
