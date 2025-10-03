@@ -45,9 +45,6 @@ Aggregations with COUNT, AVG, MIN, MAX
 Example JOIN between tables
 
 
-<img width="890" height="514" alt="Снимок экрана 2025-09-27 в 20 24 19" src="https://github.com/user-attachments/assets/9d647a59-6cbe-4a5c-8e47-747dd2053c4d" />
-
-
 - 10 analytical queries 
 Topics include:
 Orders by status
@@ -75,7 +72,8 @@ Top customers by total spending
 - Library used: **psycopg2-binary**.  
 - The script executes several SQL queries from **queries.sql** and displays the results in the terminal.
 
-<img width="755" height="1025" alt="Снимок экрана 2025-09-27 в 21 38 39" src="https://github.com/user-attachments/assets/6d1bd0d7-db36-44fc-89da-3790ec4f6bbc" />
+<img width="456" height="459" alt="Снимок экрана 2025-10-04 в 02 58 17" src="https://github.com/user-attachments/assets/9775a3dc-fb3a-4a3e-a44d-c32647ce18b7" />
+
 
 ---
 
