@@ -102,6 +102,15 @@ Created **6 static charts** for business insights:
 - Added function `export_to_excel()` with **openpyxl**.  
 - Exports query results into `/exports/olist_report.xlsx`.
 
+### 9. Apache Superset
+- Installation of Apache Superset locally (python 11)
+- Connection with database
+- Importing the tables from the database into Superset
+
+### 10. Auto Data Refresh 
+-Creating a bar chart that updates automatically (every 10 seconds) when the new orders are inserted into my database 
+
+<img width="1710" height="1107" alt="Снимок экрана 2025-10-24 в 10 13 06" src="https://github.com/user-attachments/assets/67b73200-b628-4cf1-8264-daba1d2e4bb8" />
 
 
 ### 📌 How to run the script
