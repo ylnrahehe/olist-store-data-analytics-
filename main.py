@@ -8,20 +8,17 @@ from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
 from openpyxl.formatting.rule import ColorScaleRule
 
-# Данные подключения
 DB_NAME = "olist_db"
 DB_USER = "postgres"
 DB_PASS = "0000"
 DB_HOST = "localhost"
 DB_PORT = "5432"
 
-# Папки для экспорта
 CHARTS_DIR = "charts"
 EXPORTS_DIR = "exports"
 os.makedirs(CHARTS_DIR, exist_ok=True)
 os.makedirs(EXPORTS_DIR, exist_ok=True)
 
-# Нормальные имена листов для Excel
 query_names = {
     1: "Customers Preview",
     2: "Delivered Orders",
@@ -40,6 +37,7 @@ query_names = {
 
 def visualize_charts(conn):
     """6 графиков для аналитики"""
+
     # 1. Pie chart: количество заказов по статусам
     query = """
     SELECT order_status, COUNT(*) AS total_orders
@@ -47,11 +45,41 @@ def visualize_charts(conn):
     GROUP BY order_status;
     """
     df = pd.read_sql(query, conn)
-    df.set_index("order_status")["total_orders"].plot.pie(
-        autopct="%1.1f%%", figsize=(6, 6), title="Распределение заказов по статусам"
+
+    # Объединение мелких статусов
+    others = ["invoiced", "processing", "created", "approved"]
+    df["order_status"] = df["order_status"].apply(lambda x: "others" if x in others else x)
+
+    # Пересчёт после объединения
+    df_grouped = df.groupby("order_status", as_index=False)["total_orders"].sum()
+
+    # Построение графика
+    fig, ax = plt.subplots(figsize=(7, 7))
+    wedges, texts = ax.pie(
+        df_grouped["total_orders"],
+        startangle=90,
+        textprops=dict(color="white"),
     )
-    plt.ylabel("")
-    plt.savefig(os.path.join(CHARTS_DIR, "pie_orders_status.png"))
+
+    # Легенда с процентами
+    total = df_grouped["total_orders"].sum()
+    labels = [
+        f"{status} - {value/total:.1%}"
+        for status, value in zip(df_grouped["order_status"], df_grouped["total_orders"])
+    ]
+
+    ax.legend(
+        wedges,
+        labels,
+        title="Статусы",
+        loc="center left",
+        bbox_to_anchor=(1, 0, 0.5, 1)
+    )
+
+    
+    ax.set_title("Распределение заказов по статусам")
+
+    plt.savefig(os.path.join(CHARTS_DIR, "pie_orders_status.png"), bbox_inches="tight")
     plt.close()
 
     # 2. Bar chart: средний чек по месяцам
@@ -135,8 +163,8 @@ def visualize_charts(conn):
 
     print("✅ 6 графиков сохранены в /charts/")
 
+
 def plot_time_slider(conn):
-    """Интерактивный график с ползунком времени (Plotly)"""
     query = """
     SELECT DATE_TRUNC('month', o.order_purchase_timestamp) AS month,
            c.customer_state,
@@ -162,7 +190,6 @@ def plot_time_slider(conn):
     fig.show()
 
 def export_to_excel(dataframes_dict, filename):
-    """Экспорт в Excel с форматированием"""
     filepath = os.path.join(EXPORTS_DIR, filename)
     with pd.ExcelWriter(filepath, engine="openpyxl") as writer:
         for sheet_name, df in dataframes_dict.items():
