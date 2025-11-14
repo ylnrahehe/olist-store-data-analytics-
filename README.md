@@ -59,7 +59,7 @@ Average freight value by seller state
 Top customers by total spending
 
 
-<img width="600" height="405" alt="Снимок экрана 2025-09-27 в 20 34 50" src="https://github.com/user-attachments/assets/affd1437-a646-4333-9054-6fe1a1074820" />
+
 
 
 👉 All queries are stored in **queries.sql** with short comments.
