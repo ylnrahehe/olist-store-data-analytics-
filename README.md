@@ -72,7 +72,7 @@ Top customers by total spending
 - Library used: **psycopg2-binary**.  
 - The script executes several SQL queries from **queries.sql** and displays the results in the terminal.
 
-<img width="456" height="459" alt="Снимок экрана 2025-10-04 в 02 58 17" src="https://github.com/user-attachments/assets/9775a3dc-fb3a-4a3e-a44d-c32647ce18b7" />
+
 
 
 ---
@@ -110,7 +110,19 @@ Created **6 static charts** for business insights:
 ### 10. Auto Data Refresh 
 -Creating a bar chart that updates automatically (every 10 seconds) when the new orders are inserted into my database 
 
-<img width="1710" height="1107" alt="Снимок экрана 2025-10-24 в 10 13 06" src="https://github.com/user-attachments/assets/67b73200-b628-4cf1-8264-daba1d2e4bb8" />
+
+### 11. Prometheus and Grafana connection 
+- Both running locally on the ports 9090 and 3000
+- Prometheus is succesfully connected with **postgres exporter**, **node exporter**, **custom exporter**
+- Custom exporter is succesfully obtaining the data from the OpenWeather API (Astana)
+- Alert integration is working by notifying the TELEGRAM account whenever **the battery of my laptop is < 30%**
+
+
+### 12. OPEN3D 
+- Set up the Open3D library by importing the 12th version of Python on MacOS
+- Pick the model named "wolf_obj.obj" of the 3D wolf
+- Integrated 7 operations step by step
+- At the end the "draw_geometries" window is open, presenting the illustrations of the operations
 
 
 ### 📌 How to run the script
@@ -121,3 +133,4 @@ Created **6 static charts** for business insights:
 2. My **main.py** file is in folder named "python3", so maybe you will need this to run the file
    - python3 main.py
 
+3. Able to run **assik5.py** you need to run **python3.12 assik5.py** as the Open3D library is working only with **python3.12**
