@@ -1,0 +1,15 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: 'battery low bot'
+  group_wait: 10s
+  group_interval: 5m
+  repeat_interval: 1h
+
+receivers:
+  - name: 'battery low bot'
+    telegram_configs:
+      - bot_token: '8323882725:AAEf9zuZ6xqNEnqyOxNt-mUCYNrH1mO9vGg'
+        chat_id: 798114985
+        message: "⚠️ Battery level is low: {{ $labels.power_supply }} {{ $value }}%"

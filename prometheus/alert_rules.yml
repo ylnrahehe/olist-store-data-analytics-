@@ -1,0 +1,11 @@
+groups:
+  - name: battery
+    rules:
+      - alert: BatteryLow
+        expr: node_power_supply_current_capacity{power_supply="InternalBattery-0"} < 30  
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Battery level is low"
+          description: "Battery {{ $labels.power_supply }} is below 30%: {{ $value }}%"
