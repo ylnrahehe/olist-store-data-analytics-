@@ -2,7 +2,7 @@
 
 ## 🔹 1. Project Description
 This project focuses on **data analytics of the Brazilian online store Olist**.  
-The goal is to explore and analyze e-commerce data, load it into a PostgreSQL database, perform analytical queries, and connect the database to Python for automated analysis.  
+The goal is to explore and analyze e-commerce data, load it into a PostgreSQL database, perform analytical queries, connect the database to Python for automated analysis, work with Prometheus and Grafana to visualize metrics.
 
 Dataset used: **Olist Public Dataset (Kaggle)**  
 Tables include: customers, orders, payments, reviews, sellers, products, geolocation, and order items.  
